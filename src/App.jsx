@@ -26,8 +26,8 @@ function App() {
 
   return (
     <>
-      <div className="bg-slate-800 h-screen flex justify-center items-start">
-        <div className="w-1/5 h-1/3 mt-40">
+      <div className="bg-slate-800 flex justify-center flex-col gap-4 w-screen  md:flex-row md:h-screen">
+        <div className=" mt-8 flex flex-col items-center justify-center gap-4">
           {weatherData && (
             <Temperature
               setCity={setCity}
@@ -42,43 +42,47 @@ function App() {
           )}
         </div>
 
-        <div className="w-1/3 h-1/3 mt-40 p-10 grid grid-cols-2 gap-6">
-          <h1 className="text-slate-200 text-2xl col-span-2">
+        <div className=" flex flex-col justify-center gap-4 p-4">
+          <h1 className="text-slate-200 text-2xl col-span-2 text-center">
             Today's Highlights
           </h1>
-          {weatherData && (
-            <>
-              <Highlights
-                stats={{
-                  title: "Wind Status",
-                  value: weatherData.current.wind_mph,
-                  unit: "mph",
-                  direction: weatherData.current.wind_dir,
-                }}
-              />
-              <Highlights
-                stats={{
-                  title: "Humidity",
-                  value: weatherData.current.humidity,
-                  unit: "%",
-                }}
-              />
-              <Highlights
-                stats={{
-                  title: "Visibility",
-                  value: weatherData.current.vis_miles,
-                  unit: "mph",
-                }}
-              />
-              <Highlights
-                stats={{
-                  title: "Air Pressure",
-                  value: weatherData.current.pressure_mb,
-                  unit: "mb",
-                }}
-              />
-            </>
-          )}
+          <div className="flex flex-col justify-center items-center w-full gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full gap-5">
+              {weatherData && (
+                <>
+                  <Highlights
+                    stats={{
+                      title: "Wind Status",
+                      value: weatherData.current.wind_mph,
+                      unit: "mph",
+                      direction: weatherData.current.wind_dir,
+                    }}
+                  />
+                  <Highlights
+                    stats={{
+                      title: "Humidity",
+                      value: weatherData.current.humidity,
+                      unit: "%",
+                    }}
+                  />
+                  <Highlights
+                    stats={{
+                      title: "Visibility",
+                      value: weatherData.current.vis_miles,
+                      unit: "mph",
+                    }}
+                  />
+                  <Highlights
+                    stats={{
+                      title: "Air Pressure",
+                      value: weatherData.current.pressure_mb,
+                      unit: "mb",
+                    }}
+                  />
+                </>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </>
