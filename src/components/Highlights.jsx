@@ -2,7 +2,7 @@ import React from "react";
 
 function Highlights({ stats }) {
   return (
-    <div className="w-full md:w-11/12 bg-slate-600 p-2 text-slate-200 flex flex-col justify-start items-center text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out cursor-pointer">
+    <div className="rounded-md p-4 w-full md:w-11/12 bg-white dark:bg-slate-600 text-black dark:text-slate-200 flex flex-col justify-start items-center text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out cursor-pointer">
       <h2 className="text-sm mt-2">{stats.title}</h2>
       <div className="mt-2">
         <span className="text-4xl font-bold">{stats.value}</span>
@@ -17,7 +17,7 @@ function Highlights({ stats }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 text-slate-200"
+            className="w-6 h-6 text-black dark:text-slate-200"
           >
             <path
               strokeLinecap="round"
@@ -25,7 +25,7 @@ function Highlights({ stats }) {
               d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
             />
           </svg>
-          <div className="text-slate-200 ms-2">{stats.direction}</div>
+          <div className="text-black dark:text-slate-200 ms-2">{stats.direction}</div>
         </div>
       ) : null}
 
