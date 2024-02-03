@@ -1,15 +1,16 @@
 import React from "react";
 
-function Temperature({ setCity, stats }) {
+function Temperature({ setCity, stats, setDarkTheme, darkTheme }) {
   const handleCityChange = (e) => {
     setCity(e.target.value);
   };
   return (
     <>
+      
       <div className="flex align-middle justify-center gap-4">
         <input
           type="text"
-          className="rounded-md bg-slate-600 border border-slate-500 text-slate-200 placeholder-slate-400 text-md focus:border-slate-400 block w-60 p-2 focus:outline-none"
+          className="rounded-md bg-white dark:bg-slate-600 border border-white dark:border-slate-500 text-black dark:text-slate-200 placeholder-black dark:placeholder-slate-400 text-md focus:border-black dark:focus:border-slate-400 block w-60 p-2 focus:outline-none"
           placeholder="Enter Your City Name"
           onChange={handleCityChange}
           defaultValue="New Delhi"
@@ -20,8 +21,8 @@ function Temperature({ setCity, stats }) {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="white"
-            className="w-6 h-6 text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out"
+            stroke="currentColor"
+            className="w-6 h-6 text-black dark:text-white text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out"
           >
             <path
               strokeLinecap="round"
@@ -45,7 +46,7 @@ function Temperature({ setCity, stats }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-14 h-14 text-yellow-300 text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out"
+            className="w-14 h-14 text-yellow-50  dark:text-yellow-300 text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out"
           >
             <path
               strokeLinecap="round"
@@ -60,7 +61,7 @@ function Temperature({ setCity, stats }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-12 h-12 text-slate-200 text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out"
+            className="w-12 h-12 text-black dark:text-slate-200 text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out"
           >
             <path
               strokeLinecap="round"
@@ -71,18 +72,18 @@ function Temperature({ setCity, stats }) {
         )}
       </div>
 
-      <div className="flex justify-center items-center text-slate-200 text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out">
+      <div className="flex justify-center items-center text-black dark:text-slate-200 text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out">
         <p className="font-semibold text-[55px] ">
           {stats.temp}
           <span className="text-[33px]">°C</span>
         </p>
       </div>
 
-      <div className="flex justify-center text-slate-300 text-[25px] text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out">
+      <div className="flex justify-center text-black dark:text-slate-300 text-[25px] text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out">
         {stats.condition}
       </div>
 
-      <div className="flex justify-center text-slate-400 text-[15px] text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out">
+      <div className="flex justify-center font-medium text-black dark:text-slate-400 text-[15px] text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out">
         Today &#183; {stats.time} | {stats.location}
       </div>
     </>
